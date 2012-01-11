@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+    <title>jsdiagram.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+    <script type="text/javascript" src="server.js"></script>
+    <script type="text/javascript" src="wz_jsgraphics.js"></script>
+    <script type="text/javascript" src="jsdiagram.js"></script>
+
+</head>
+<body onLoad="init();">
+<form method="post" action="">
+<div id="drawgrid" style="cursor:crosshair; border:1px solid black; width:397px; height:385px; position:absolute; top:10px; left: 10px;"></div>
+
+<div id="toolbox" style="position:absolute; left:10px; top:405px;">
+<input type="button" name="clearCanvas" id="clearCanvas" onclick="jsd.clearCanvas();" value="Clear Diagram"/><br />
+<input type="button" name="saveCanvas" id="saveCanvas" value="Save Diagram" onclick="jsd.saveCanvas();" />
+<input type="button" name="loadCanvas" id="loadCanvas" value="Load Diagram" onclick="jsd.loadCanvas();" />
+
+<input type="checkbox" name="gridonoff" id="gridonoff" checked="checked" onclick="jsd.toggleBackground();" /> Grid On
+<br />Drawing Tools:
+<input type="radio" name="drawtool" onclick="jsd.changeTool('Line');" checked="checked" /> Line
+<input type="radio" name="drawtool" onclick="jsd.changeTool('Rectangle');" /> Rectangle
+<input type="radio" name="drawtool" onclick="jsd.changeTool('Ellipse');" /> Ellipse
+<input type="radio" name="drawtool" onclick="jsd.changeTool('Text');" /> Text
+</div>
+
+<div id="drawgrid2" style="cursor:crosshair; border:1px solid black; width:397px; height:385px; position:absolute; left:555px; top:8px;"></div>
+<div id="toolbox2" style="position:absolute; left:555px; top:405px;">
+<input type="button" name="clearCanvas2" id="clearCanvas" onclick="jsd2.clearCanvas();" value="Clear Canvas"/><br />
+<input type="button" name="saveCanvas2" id="saveCanvas" value="Save Canvas" onclick="jsd2.saveCanvas();" />
+<input type="button" name="loadCanvas2" id="loadCanvas" value="Load Canvas" onclick="jsd2.loadCanvas();" />
+
+<input type="checkbox" name="gridonoff2" id="gridonoff2" checked="checked" onclick="jsd2.toggleBackground();" /> Grid On
+<br />Drawing Tools:
+<input type="radio" name="drawtool2" onclick="jsd2.changeTool('Line');" checked="checked" /> Line
+<input type="radio" name="drawtool2" onclick="jsd2.changeTool('Rectangle');" /> Rectangle
+<input type="radio" name="drawtool2" onclick="jsd2.changeTool('Ellipse');" /> Ellipse
+<input type="radio" name="drawtool2" onclick="jsd2.changeTool('Text');" /> Text
+</div>
+
+<script language="Javascript" type="text/javascript">
+<!--
+    function init () {
+        jsd = new jsDiagram('testdiagram', 'drawgrid', 'images/gridgrey.gif', true);
+        jsd2 = new jsDiagram('testdiagram2', 'drawgrid2', 'images/gridgrey.gif', true);
+    }
+
+//-->
+</script>
+
+</form>
+</body>
+</html>
